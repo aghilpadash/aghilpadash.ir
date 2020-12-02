@@ -18,8 +18,7 @@ class UserProfile(models.Model):
     avatar = models.FileField(upload_to='files/user_avatar/', null=True, blank=True, validators=[validate_file_extensions])
     description = models.CharField(max_length=512, null=False, blank=False)
 
-    def __str__(self):
-        return self.user.username
+
 
 class Article(models.Model):
     title = models.CharField(max_length=128, null=False, blank=False)
@@ -29,13 +28,9 @@ class Article(models.Model):
     create_at = models.DateField(default=datetime.now, blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     author = models.OneToOneField(UserProfile, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.title
+
 
 
 class Category(models.Model):
     title = models.CharField(max_length=128, null=False, blank=False)
     cover = models.FileField(upload_to='files/category_cover/', null=True, blank=True, validators=[validate_file_extensions])
-
-    def __str__(self):
-        return self.title
