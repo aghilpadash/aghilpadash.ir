@@ -59,7 +59,7 @@
 					<ul>
 						<li><a href="index.html">صفحه اصلی</a></li>
 						<li><a href="category.html">وبلاگ</a></li>
-						<li><a href="about.html">درباره من</a></li>
+						<li><a href="{% url 'about' %}" title="">درباره من</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -111,7 +111,7 @@
                     {% for article in article_data %}
 					<article class="has-animation animate-in" data-delay="0">
 						<div class="entry-meta-content">
-							<div class="entry-date">{{ article.create_at}}<span>nov</span></div>
+							<div class="entry-date">{{ article.create_at}}<span>{{ article.create_at2}}</span></div>
 							<h2 class="entry-title"><a href="#">{{ article.title }}</a></h2>
 							<span class="entry-meta">توسط <a href="#">{{ article.author }}</a> در <a href="#">{{ article.category }}</a></span>
 						</div>
@@ -147,57 +147,23 @@
 
 
 	<!-- footer wrapper -->
-	<section class="footer-wrapper pad-50 bg-lightblue style-2">
+	<section class="footer-wrapper pad-75 bg-lightblue">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3 col-md-4 widget">
-					<a href="index.html" class="logo"><img src="static/images/logo-3.png" alt="logo"></a>
-				</div>
-				<div class="col-lg-3 col-md-4 widget">
-					<ul class="widget-link">
-						<li><a href="#">بلاگ</a></li>
-						<li><a href="#">درباره من</a></li>
-						<li><a href="#">تماس با من</a></li>
+				<div class="col-sm-12 text-center">
+					<ul class="social-icons-two light list-inline">
+						<li class="list-inline-item"><a href="#"><i class="icon-google-plus"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="icon-facebook"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="icon-twitter"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="icon-linedin"></i></a></li>
+						<li class="list-inline-item"><a href="#"><i class="icon-instagram"></i></a></li>
 					</ul>
-				</div>
-				<div class="col-lg-3 col-md-4 widget">
-					<ul class="widget-link">
-						<li><a href="#">پایتون</a></li>
-						<li><a href="#">پایتون برای وب</a></li>
-						<li><a href="#">پایتون برای تحلیل داده</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3  col-md-12 widget">
-					<span class="widget-title">Subscribe</span>
-					<form action="#" class="subscribe-form mt-3">
-						<label>
-							<input type="text" placeholder="Your email address">
-						</label>
-						<button class="subscribe-bttn"><i class="fa fa-arrow-right"></i></button>
-					</form>
+					<p class="copyright-text">طراحی شده با <b>عشق</b> و <br> All Rights Reserved.</p>
+					<a href="#" class="back-top">بازگشت به بالا</a>
 				</div>
 			</div>
-			<div class="row pad-top-50">
-				<div class="col-lg-3 col-md-4 widget">
-					<ul class="social-share list-inline">
-						<li class="list-inline-item"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-heart"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
-						<li class="list-inline-item"><a href="#"><i class="fa fa-twitter-square"></i></a></li>
-					</ul>
-				</div>
-				<div class="col-lg-6 col-md-4 widget">
-					<ul class="widget-link-2 list-inline">
-						<li class="list-inline-item"><a href="#">صفحه اصلی</a></li>
-						<li class="list-inline-item"><a href="#">خدمات</a></li>
-						<li class="list-inline-item"><a href="#">سوالات متداول</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3 col-md-4 widget text-right">
-					<p>طراحی شده با <span class="glyphicon glyphicon-heart pulse1" style="color:red"></span></p>
-				</div>
 		</div>
-    </section>
+	</section>
 	<!-- footer-wrapper -->
 
 

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'blog',
     'reset_migrations',
+    'rest_framework',
 
 ]
 

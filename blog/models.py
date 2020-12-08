@@ -29,7 +29,7 @@ class Article(models.Model):
     content = RichTextField()
     create_at = models.DateField(default=datetime.now, blank=False)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
-    author = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    author = models.ForeignKey('UserProfile', on_delete=models.CASCADE)
 
 
 class Category(models.Model):
