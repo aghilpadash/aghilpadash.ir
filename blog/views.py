@@ -10,8 +10,9 @@ from . import serializers
 class IndexPage(TemplateView):
 
     def get(self, request, **kwargs):
+
         article_data = []
-        all_articles = Article.objects.all().order_by('-create_at')[:7]
+        all_articles = Article.objects.all().order_by('-create_at')[:9]
 
         for article in all_articles:
             article_data.append({
@@ -50,11 +51,10 @@ class AllArticleAPIView(APIView):
                     "create_at": article.create_at.day,
                     "create_at2": article.create_at.month,
                 })
-
             return Response({'data': data}, status=status.HTTP_200_OK)
         except:
             return Response({'status': "اوه! یه مشکلی پیش اومده. سریع برطرفش میکنم :)"},
-                            status=status.HTTP_500_INTERNAL_SERVER_ERROR),
+                            status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class SingleArticleAPIView(APIView):
